@@ -1,13 +1,272 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Open Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 5px 10px;
+}
+
+thead {
+    background-color: lightblue;
+}
+
+tr {
+    white-space: nowrap;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #337ab7;
+    overflow: hidden;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    background-color: #2e6da4;
+}
+
+.home {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.InsertParameters {
+    margin: 0 auto 20px auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 70px repeat(4, 75px) 95px 50px 34px;
+    grid-template-areas: 
+        "header header header header param"
+        "system system system system system"
+        "psf psf psf psf psf"
+        "dcd dcd dcd dcd dcd"
+        "selection selection selection selection selection"
+        "distance blocksMin blocksMax epsilon cores"
+        "frame frame frame . ."
+        ". . . . run";
+}
+
+.InsertParameters h1 {
+    grid-area: header;
+}
+
+.InsertParameters .system-selection {
+    grid-area: param;
+    align-self: end;
+    margin-bottom: 0;
+}
+
+.InsertParameters .system {
+    grid-area: system;
+}
+
+.InsertParameters .psf {
+    grid-area: psf;
+}
+
+.InsertParameters .dcd {
+    grid-area: dcd;
+}
+
+.InsertParameters .selection {
+    grid-area: selection;
+}
+
+.InsertParameters .distance {
+    grid-area: distance;
+    margin-right: 10px;
+    align-self: end;
+}
+
+.InsertParameters .blocks-min {
+    grid-area: blocksMin;
+    margin-right: 10px;
+    align-self: end;
+}
+
+.InsertParameters .blocks-max {
+    grid-area: blocksMax;
+    margin-right: 10px;
+    align-self: end;
+}
+
+.InsertParameters .epsilon {
+    grid-area: epsilon;
+    margin-right: 10px;
+    align-self: end;
+}
+
+.InsertParameters .cores {
+    grid-area: cores;
+    align-self: end;
+}
+
+.InsertParameters .frame-to-time {
+    grid-area: frame;
+    display: flex;
+    align-items: center;
+}
+
+.InsertParameters .frame-to-time .frame {
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.InsertParameters .frame-to-time .time {
+    margin-bottom: 0;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.InsertParameters .frame-to-time .unit {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.InsertParameters .run {
+    grid-area: run;
+    justify-self: end;
+}
+
+.result-container h1, .result-container .pick-system {
+    margin-left: 5%;
+}
+
+.result-container .form-group {
+    width: 300px;
+}
+
+.fit-plot-param {
+    display: flex;
+}
+
+.fit-plot {
+    width: 48%;
+    height: 400px;
+}
+
+.fit-parameter {
+    width: 50%;
+    margin-left: 5px;
+}
+
+.fit-parameter-table {
+    overflow-x: auto;
+}
+
+.results .fit-result h2 {
+    margin-left: 5%;
+}
+
+.table-lifetime {
+    width: 80%;
+    margin: 0 auto;
+    height: 500px;
+    overflow: auto;
+}
+
+.table-lifetime table {
+    width: 100%;
+}
+
+.table-lifetime tbody tr:hover {
+    font-weight: bold;
+}
+
+#download-button{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+    margin-bottom: 7px;
+}
+
+.info {
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+.info #keyword-table tr {
+    white-space: normal;
+}
+
+#message-nav {
+    float: right;
+    display: block;
+    width: 400px;
+    height: 46px;
+}
+
+.message-header-title {
+    border: 2px solid black;
+    padding: 5px 12px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: black;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px 10px 0 0;
+}
+
+.message-list {
+    color: black;
+    position: absolute;
+    width: 395px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 2px solid black;
+    top: 37px;
+    border-radius: 0 0 10px 10px;
+}
+
+.message-wrapper ul {
+    background-color: #f9f9f9;
+}
+
+.message-wrapper li {
+    width: 100%;
+}
+
+.message-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.msg-box {
+    border-top: 1px solid black;
+}
+
+.msg-text {
+    margin-left: 10px;
 }
